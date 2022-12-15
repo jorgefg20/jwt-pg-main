@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!--script type="module" src="./scriptsusers/userController.js"></script-->
+  <link rel="stylesheet" href="../styles/stylesusers.css">
+  <title>Editor user</title>
+</head>
+
+<body>
+
+  <div class="container-fluid tam" style="text-align: center;">
+
+    <img style="margin-top: 2.5%;" src="../resource/logo-sacaba.png">
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="tam"
+    style="background-color: rgba(153, 151, 151, 0.7); border-bottom: 3px solid blue">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+        aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div>
+        <a class="navbar-brand tools" routerLink="/">
+          <img src="../resource/sigamosadeelante.png" width="100" height="40">
+        </a>
+      </div>
+
+
+
+
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03" style="margin:0 auto; text-align: center;">
+
+        <ul style=" text-align: center; margin: 0 auto;" class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li><a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+              aria-controls="offcanvasWithBothOptions">Registrar</a></li>
+          <li><a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+              aria-controls="offcanvasWithBothOptions">Actualizar</a></li>
+          <li id="searcher" ><a href="#">Buscar</a>
+            <ul class="slide" id="slide" >
+              <li>
+                <!--a href="#" id="fast " data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Busqueda Rapida</a></li-->
+                <button class="btn btn-primary" id="tol" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+                  Busqueda rapida
+                </button>
+              <li>
+                <!--a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Busqueda General</a></li-->
+                <button class="btn btn-primary" id="toll" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+                  busqueda general
+                </button>
+            </ul>
+          </li>
+          
+        <!--ul style=" text-align: center; margin: 0 auto;" class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/synopsis">Registrar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/otherGames">Actualizar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/trailer">Buscar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/trailer">Roles</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/trailer">Secretarias</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/trailer">Tipos de tramite</a>
+          </li>
+        </ul>
+
+        <--form class="d-flex">
+          <button type="button" class="btn btn-outline-primary" (click)="open('./register')">Register</button>
+          <button type="button" class="btn btn-primary" (click)="open('./login')">Login</button>
+        </form-->
+
+      </div>
+    </div>
+  </nav>
+  
+  <!--div style="width: 100%; height: 20px; background-color: blueviolet;">
+    <button style="height: 18px; float: right;"  >edit</button>
+  </div-->
+
+
+ 
+  
+  
+
+  <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+    
+
+
+
+
+
+    <!--div class="offcanvas-body">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Codigo" aria-label="Codigo" aria-describedby="basic-addon1">
+      </div>
+
+      <div class="input-group mb-3">
+        <select class="form-select DO" aria-label="Default select example">
+          <option selected>Distrito</option>
+          <option value="1">DO1</option>
+          <option value="2">DO2</option>
+          <option value="3">DO3</option>
+          <option value="4">DO4</option>
+          <option value="5">DO5</option>
+          <option value="6">DO6</option>
+        </select>
+      </div>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Zona" aria-label="Zona" aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Nro Folder" aria-label="Nro Folder" aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Nro Tramite" aria-label="Nro Tramite" aria-describedby="basic-addon1">
+      </div>
+
+      <div class="input-group mb-3">
+
+        <div  class=" dates">
+          <select class="form-select gest-regis" aria-label="Default select example">
+            <option selected>Gestion</option>
+            <option value="1">1950</option>
+            <option value="2">2001</option>
+            <option value="3">2020</option>
+            <option value="4">1998</option>
+            <option value="5">1999</option>
+            <option value="6">2022</option>
+          </select>
+
+          <input placeholder="Fecha de Registro" class="form-control gest-regis" type="text" onfocus="(this.type='date')" id="date">
+
+        </div>
+      </div>
+
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Tipo de Tramie" aria-label="Nro Folder" aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Nombre Completo" aria-label="Nro Tramite" aria-describedby="basic-addon1">
+      </div>
+    </div-->
+  </div>
+    
+
+
+  <div style="text-align: center; margin:0 auto">
+
+    <div>
+      <button style="width: 100%; margin-top: 5px;" class="btn btn-primary btn-action aceptar"
+      id="button-delete-token">Delete Token</button>
+  </div>
+
+    <img src="../resource/background.png" alt="">
+
+
+    
+
+    <div>
+      <button style="float:left">Limpiar</button>
+      <button style="float:right">Buscar</button>
+    </div>
+
+    <p>
+
+      What is Lorem Ipsum?
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+      standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+      type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+      remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+      Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
+      of Lorem Ipsum.
+
+      Why do we use it?
+      It is a long established fact that a reader will be distracted by the readable content of a page when looking at
+      its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
+      opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing
+      packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will
+      uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by
+      accident, sometimes on purpose (injected humour and the like).
+
+
+    </p>
+    <p>
+
+      What is Lorem Ipsum?
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+      standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+      type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+      remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+      Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
+      of Lorem Ipsum.
+
+      Why do we use it?
+      It is a long established fact that a reader will be distracted by the readable content of a page when looking at
+      its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
+      opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing
+      packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will
+      uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by
+      accident, sometimes on purpose (injected humour and the like).
+
+
+    </p>
+    <p>
+
+      What is Lorem Ipsum?
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+      standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+      type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+      remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+      Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
+      of Lorem Ipsum.
+
+      Why do we use it?
+      It is a long established fact that a reader will be distracted by the readable content of a page when looking at
+      its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
+      opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing
+      packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will
+      uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by
+      accident, sometimes on purpose (injected humour and the like).
+
+
+    </p>
+    <p>
+
+      What is Lorem Ipsum?
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+      standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+      type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+      remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+      Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
+      of Lorem Ipsum.
+
+      Why do we use it?
+      It is a long established fact that a reader will be distracted by the readable content of a page when looking at
+      its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
+      opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing
+      packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will
+      uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by
+      accident, sometimes on purpose (injected humour and the like).
+
+
+    </p>
+
+   
+
+  </div>
+  <script type="module" id="" src="./home.js"></script>
+</body>
+
+</html>

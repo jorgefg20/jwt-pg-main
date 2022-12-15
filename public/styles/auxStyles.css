@@ -1,0 +1,464 @@
+.section {
+	position: relative;
+	height: 100vh;
+}
+
+.section .section-center {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+
+input[type=date] {
+    background-color: #fff;
+	height: 50px;
+    color: rgba(153, 151, 151, 0.7);
+	border: none;
+	font-size: 16px;
+	font-weight: 400;
+	-webkit-box-shadow: none;
+	/*box-shadow: none;*/
+	border-radius: 40px;
+	padding: 0px 25px;
+    box-shadow:3px 3px 3px  rgba(153, 151, 151, 0.7);  
+}
+
+/*#booking {
+	font-family: 'PT Sans', sans-serif;
+	background-image: url('../resource/background.png');
+	background-size:contain;
+    background-repeat: no-repeat;
+	background-position: center;
+}*/
+
+.booking-form {
+	/*background: rgba(0, 0, 0, 0.7);*/
+	padding: 40px;
+	border-radius: 10px;
+    box-shadow:5px 5px 10px rgba(153, 151, 151, 0.7);
+}
+
+.booking-form .form-group {
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.booking-form .form-control {
+	background-color: #fff;
+	height: 50px;
+    color: black;
+	border: none;
+	font-size: 16px;
+	font-weight: 400;
+	-webkit-box-shadow: none;
+	/*box-shadow: none;*/
+	border-radius: 40px;
+	padding: 0px 25px;
+    box-shadow:3px 3px 3px  rgba(153, 151, 151, 0.7);
+    
+}
+
+
+.booking-form .form-control::-webkit-input-placeholder {
+	color: #696969;
+}
+
+.booking-form .form-control:-ms-input-placeholder {
+	color: #696969;
+}
+
+.booking-form .form-control::placeholder {
+	color:#696969;
+}
+.booking-form input[type="date"].form-control:invalid {
+	color: rgba(82, 82, 84, 0.4);
+}
+
+.booking-form select.form-control {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.booking-form select.form-control+.select-arrow {
+	position: absolute;
+	right: 10px;
+	bottom: 6px;
+	width: 32px;
+	line-height: 32px;
+	height: 32px;
+	text-align: center;
+	pointer-events: none;
+	color: rgba(0, 0, 0, 0.3);
+	font-size: 14px;
+}
+
+.booking-form select.form-control+.select-arrow:after {
+	content: '\279C';
+	display: block;
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+.booking-form .form-label {
+	display: block;
+	/*margin-left: 20px;*/
+	margin-bottom: 5px;
+	font-weight: 400;
+	text-transform: uppercase;
+	line-height: 24px;
+	height: 24px;
+	font-size: 12px;
+	color: rgb(0, 0, 0);
+}
+
+.booking-form .form-checkbox input {
+	position: absolute !important;
+	margin-left: -9999px !important;
+	visibility: hidden !important;
+}
+
+.booking-form .form-checkbox label {
+	position: relative;
+	padding-top: 4px;
+	padding-left: 30px;
+	font-weight: 400;
+	color: rgb(0, 0, 0);
+}
+
+.booking-form .form-checkbox label+label {
+	margin-left: 15px;
+}
+
+.booking-form .form-checkbox input+span {
+	position: absolute;
+	left: 2px;
+	top: 4px;
+	width: 20px;
+	height: 20px;
+	background: #fff;
+	border-radius: 50%;
+}
+
+.booking-form .form-checkbox input+span:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 0px;
+	height: 0px;
+	border-radius: 50%;
+	background-color:  #0d6efd;;
+	-webkit-transition: 0.2s all;
+	transition: 0.2s all;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.booking-form .form-checkbox input:not(:checked)+span:after {
+	opacity: 0;
+}
+
+.booking-form .form-checkbox input:checked+span:after {
+	opacity: 1;
+	width: 10px;
+	height: 10px;
+}
+
+.booking-form .form-btn {
+	margin-top: 27px;
+}
+
+.booking-form .submit-btn {
+	color: #fff;
+	background-color: #0d6efd;
+	font-weight: 400;
+	height: 50px;
+	font-size: 14px;
+	border: none;
+	width: 100%;
+	border-radius: 40px;
+	text-transform: uppercase;
+	-webkit-transition: 0.2s all;
+	transition: 0.2s all;
+}
+
+.booking-form .submit-btn:hover,
+.booking-form .submit-btn:focus {
+	opacity: 0.9;
+}
+
+
+
+/* css de la ventana login*/
+
+input,
+textarea {
+    font-family: inherit;
+    /* 1 */
+    font-size: 100%;
+    /* 2 */
+    margin: 0;
+    /* 3 */
+    box-sizing: border-box;
+}
+
+label {
+    box-sizing: border-box;
+}
+
+textarea {
+    overflow: auto;
+    /* 1 */
+    vertical-align: top;
+    /* 2 */
+}
+
+input[type=password],
+input[type=text] {
+    /* width: 18em;*/
+    width: 100%;
+    background-color: white;
+    height: calc(3em + 2px);
+    padding: 1em;
+    font-size: 1em;
+    border: 1px solid #cccccc;
+    border-radius: 1.5em;
+    transition: all 0.2s ease-out;
+    box-shadow:3px 3px 3px rgba(153, 151, 151, 0.7);
+    resize: none;
+    outline: none;  
+}
+
+input[type=password]:hover,
+input[type=text]:hover {
+    border: 1px solid #cccccc;
+}
+
+input[type=password]:focus,
+input[type=password]:active,
+input[type=text]:focus,
+input[type=text]:active {
+    border: 1px solid #696969;
+}
+
+input[type=password]:focus+label:before,
+input[type=password]:active+label:before,
+input[type=text]:focus+label:before,
+input[type=text]:active+label:before {
+    color:#696969;
+}
+
+input[type=password]+label,
+input[type=text]+label {
+    display: block;
+    font-size: 1em;
+    height: 3em;
+    line-height: 3em;
+    margin-top: calc(-3em - 1px);
+    margin-bottom: 1em;
+    pointer-events: none;
+}
+
+input[type=password]+label:before,
+input[type=text]+label:before {
+    content: attr(placeholder);
+    display: inline-block;
+    color: #999999;
+    margin: 0 calc(1em + 2px);
+    white-space: nowrap;
+    transition-property: transform, color;
+    transition-duration: 0.2s;
+    transition-delay: 0;
+    transition-timing-function: ease-out;
+    transform-origin: left center;
+}
+
+input[type=password]:focus+label:before,
+input[type=password].active+label:before,
+input[type=password]:valid+label:before,
+input[type=text]:focus+label:before,
+input[type=text].active+label:before,
+input[type=text]:valid+label:before {
+    background: white;
+    line-height: 1;
+    padding: 0 1.5px;
+    transform: translateY(calc(-3em / 2 - 1px/2)) scale(0.8, 0.8);
+}
+
+input[type=password]:valid,
+input[type=text]:valid {
+    
+}
+
+input[type=password]:valid+label:before,
+input[type=text]:valid+label:before {
+    content: attr(alt);
+    color:#696969;
+}
+
+textarea {
+    width: 18em;
+    background-color: white;
+    height: calc(18em + 2px);
+    padding: 1em;
+    font-size: 1em;
+    border: 1px solid #cccccc;
+    border-radius: 16px;
+    transition: all 0.2s ease-out;
+    box-shadow: none;
+    resize: none;
+    outline: none;
+}
+
+textarea:hover {
+    border: 1px solid #cccccc;
+}
+
+textarea:focus,
+textarea:active {
+    border: 1px solid #696969;
+}
+
+textarea:focus+label:before,
+textarea:active+label:before {
+    color:#696969;
+}
+
+textarea+label {
+    display: block;
+    font-size: 1em;
+    height: calc(18em + 2px);
+    line-height: 1;
+    padding-top: calc(1em + 1px);
+    margin-top: calc(-18em - 2px);
+    margin-bottom: 1em;
+    pointer-events: none;
+}
+
+textarea+label:before {
+    content: attr(placeholder);
+    display: inline-block;
+    color: #999999;
+    margin: 0 calc(1em + 2px);
+    white-space: nowrap;
+    transition-property: transform, color;
+    transition-duration: 0.2s;
+    transition-delay: 0;
+    transition-timing-function: ease-out;
+    transform-origin: left center;
+}
+
+textarea:focus+label:before,
+textarea.active+label:before,
+textarea:valid+label:before {
+    background: white;
+    line-height: 1;
+    padding: 0 1.5px;
+    transform: translateY(calc((-1em - 0.5em) - 0.5px)) scale(0.8, 0.8);
+}
+
+textarea:valid {
+    border: 1px solid #0d6efd;
+}
+
+textarea:valid+label:before {
+    content: attr(alt);
+    color: #696969;
+}
+
+
+
+
+
+/*input file*/
+
+
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,300);
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.file-upload-wrapper {
+  
+  position: relative;
+  width: 100%;
+  height: 55px;
+  border-radius: 25px 25px 25px 25px;
+  border: 1px solid #cccccc;
+  
+}
+.file-upload-wrapper:after {
+ /* content: attr(data-text);*/
+  font-size: 18px;
+  position: relative;
+  top: 0;
+  left: 0;
+  background: #fff;
+  padding: 10px 15px;
+  display: block;
+  width: calc(100% - 40px);
+  pointer-events: none;
+  z-index: 20;
+  height: 55px;
+  line-height: 40px;
+  color: #999;
+  border-radius: 5px 10px 10px 5px;
+  font-weight: 300;
+  border-radius: 10px;
+}
+.file-upload-wrapper:before {
+  content: "Archivo";
+  position: relative;
+  top: 0;
+  right: 0;
+  display: inline-block;
+  height: 55px;
+  background:  #999;
+  color: #fff;
+  font-weight: 700;
+  z-index: 25;
+  font-size: 16px;
+  line-height: 60px;
+  padding: 0 15px;
+  text-transform: uppercase;
+  pointer-events: none;
+  border-radius: 25px 0px 0px 25px;
+  border: 1px solid #cccccc;
+}
+.file-upload-wrapper:hover:before {
+  background:  #494949;
+}
+.file-upload-wrapper input {
+  opacity: 0;
+  position:absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  height: 55px;
+  margin: 0;
+  padding: 0;
+  display: block;
+  cursor: pointer;
+  width: 100%;
+  border: 1px solid #cccccc;
+  
+}
+#btn-file{
+   
+    border: 1px solid #cccccc;
+    color: #696969;
+    height: 45px;
+    border-radius: 25px 0px 0px 25px;
+    margin-left: 0%;
+    margin-top: 0%;
+}

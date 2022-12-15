@@ -1,0 +1,401 @@
+.inicio {
+    background: #fff;
+    color: #666666;
+    font-family: "Open Sans", sans-serif;
+}
+
+#hero {
+    width: 100%;
+    height: 100vh;
+    background: url(../resource/plaza2.jpg) top center;
+    background-size: cover;
+    position: relative;
+}
+
+#hero .hero-container {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+@media (min-width: 1024px) {
+    #hero {
+        background-attachment: fixed;
+    }
+}
+
+#hero:before {
+    content: "";
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#hero .hero-container {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+#hero h1 {
+    margin: 30px 0 10px 0;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 28px;
+        line-height: 36px;
+    }
+}
+
+
+/*#hero h2 {
+    color: #eee;
+    margin-bottom: 50px;
+    font-size: 24px;
+}
+
+@media (max-width: 768px) {
+    #hero h2 {
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 30px;
+    }
+}*/
+
+#hero .btn-get-started {
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 8px 28px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin: 10px;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+#hero .btn-get-started:hover {
+    background: #0d6efd;
+    border: 2px solid #0d6efd;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+}
+
+.modal-dialog {
+    top: 35%;
+    box-shadow: 4px 10px 5px rgb(58, 57, 57);
+    border-radius: 20px;
+}
+
+.forms {
+    margin-top: -2px;
+    padding-top: 0%;
+}
+
+.modal {
+    --bs-modal-zindex: 1055;
+    --bs-modal-width: 400px;
+    --bs-modal-padding: 1rem;
+    --bs-modal-margin: 0.5rem;
+    --bs-modal-color: ;
+    --bs-modal-bg: #fff;
+    --bs-modal-border-color: var(--bs-border-color-translucent);
+    --bs-modal-border-width: 1px;
+    --bs-modal-border-radius: 0.5rem;
+    --bs-modal-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    --bs-modal-inner-border-radius: calc(0.5rem - 1px);
+    --bs-modal-header-padding-x: 1rem;
+    --bs-modal-header-padding-y: 1rem;
+    --bs-modal-header-padding: 1rem 1rem;
+    --bs-modal-header-border-color: var(--bs-border-color);
+    --bs-modal-header-border-width: 1px;
+    --bs-modal-title-line-height: 1.5;
+    --bs-modal-footer-gap: 0.5rem;
+    --bs-modal-footer-bg: ;
+    --bs-modal-footer-border-color: var(--bs-border-color);
+    --bs-modal-footer-border-width: 1px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--bs-modal-zindex);
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: 0;
+}
+
+.mb-3 {
+    margin-bottom: 0rem!important;
+}
+
+.modal-footer {
+    display: contents;
+    padding: 0;
+}
+
+
+/* css de la ventana login*/
+
+input,
+textarea {
+    font-family: inherit;
+    /* 1 */
+    font-size: 100%;
+    /* 2 */
+    margin: 0;
+    /* 3 */
+    box-sizing: border-box;
+}
+
+label {
+    box-sizing: border-box;
+}
+
+textarea {
+    overflow: auto;
+    /* 1 */
+    vertical-align: top;
+    /* 2 */
+}
+
+input[type=password],
+input[type=text] {
+    /* width: 18em;*/
+    width: 100%;
+    background-color: white;
+    height: calc(3em + 2px);
+    padding: 1em;
+    font-size: 1em;
+    border: 1px solid #cccccc;
+    border-radius: 1.5em;
+    transition: all 0.2s ease-out;
+    box-shadow: none;
+    resize: none;
+    outline: none;
+}
+
+input[type=password]:hover,
+input[type=text]:hover {
+    border: 1px solid #cccccc;
+}
+
+input[type=password]:focus,
+input[type=password]:active,
+input[type=text]:focus,
+input[type=text]:active {
+    border: 1px solid #0d6efd;
+}
+
+input[type=password]:focus+label:before,
+input[type=password]:active+label:before,
+input[type=text]:focus+label:before,
+input[type=text]:active+label:before {
+    color: #0d6efd;
+}
+
+input[type=password]+label,
+input[type=text]+label {
+    display: block;
+    font-size: 1em;
+    height: 3em;
+    line-height: 3em;
+    margin-top: calc(-3em - 1px);
+    margin-bottom: 1em;
+    pointer-events: none;
+}
+
+input[type=password]+label:before,
+input[type=text]+label:before {
+    content: attr(placeholder);
+    display: inline-block;
+    color: #999999;
+    margin: 0 calc(1em + 2px);
+    white-space: nowrap;
+    transition-property: transform, color;
+    transition-duration: 0.2s;
+    transition-delay: 0;
+    transition-timing-function: ease-out;
+    transform-origin: left center;
+}
+
+input[type=password]:focus+label:before,
+input[type=password].active+label:before,
+input[type=password]:valid+label:before,
+input[type=text]:focus+label:before,
+input[type=text].active+label:before,
+input[type=text]:valid+label:before {
+    background: white;
+    line-height: 1;
+    padding: 0 1.5px;
+    transform: translateY(calc(-3em / 2 - 1px/2)) scale(0.8, 0.8);
+}
+
+input[type=password]:valid,
+input[type=text]:valid {
+    border: 1px solid #0d6efd;
+}
+
+input[type=password]:valid+label:before,
+input[type=text]:valid+label:before {
+    content: attr(alt);
+    color: #0d6efd;
+}
+
+textarea {
+    width: 18em;
+    background-color: white;
+    height: calc(18em + 2px);
+    padding: 1em;
+    font-size: 1em;
+    border: 1px solid #cccccc;
+    border-radius: 16px;
+    transition: all 0.2s ease-out;
+    box-shadow: none;
+    resize: none;
+    outline: none;
+}
+
+textarea:hover {
+    border: 1px solid #cccccc;
+}
+
+textarea:focus,
+textarea:active {
+    border: 1px solid #0d6efd;
+}
+
+textarea:focus+label:before,
+textarea:active+label:before {
+    color: #0d6efd;
+}
+
+textarea+label {
+    display: block;
+    font-size: 1em;
+    height: calc(18em + 2px);
+    line-height: 1;
+    padding-top: calc(1em + 1px);
+    margin-top: calc(-18em - 2px);
+    margin-bottom: 1em;
+    pointer-events: none;
+}
+
+textarea+label:before {
+    content: attr(placeholder);
+    display: inline-block;
+    color: #999999;
+    margin: 0 calc(1em + 2px);
+    white-space: nowrap;
+    transition-property: transform, color;
+    transition-duration: 0.2s;
+    transition-delay: 0;
+    transition-timing-function: ease-out;
+    transform-origin: left center;
+}
+
+textarea:focus+label:before,
+textarea.active+label:before,
+textarea:valid+label:before {
+    background: white;
+    line-height: 1;
+    padding: 0 1.5px;
+    transform: translateY(calc((-1em - 0.5em) - 0.5px)) scale(0.8, 0.8);
+}
+
+textarea:valid {
+    border: 1px solid #0d6efd;
+}
+
+textarea:valid+label:before {
+    content: attr(alt);
+    color: #0d6efd;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+
+/** password field*/
+
+.warning-icon {
+    margin-left: 2%;
+    color: rgb(226, 2, 2);
+}
+
+.waring-label {
+    color: rgb(226, 2, 2);
+    font-size: 13px;
+}
+
+.warning-div {
+    margin-top: -15px;
+}
+
+.aceptar {
+    border-radius: 20px;
+}
+
+.mymodal {
+    border-radius: 15px;
+}
+
+
+/*styles of the eye for the password*/
+
+#icon {
+    position: absolute;
+    display: block;
+    bottom: .5rem;
+    right: 1rem;
+    user-select: none;
+    cursor: pointer;
+}
+
+#is-relative {
+    max-width: 420px;
+    position: relative;
+}
+
+
+
+
+
+/*snackbar*/

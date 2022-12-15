@@ -1,0 +1,93 @@
+### create role
+POST http://localhost:5000/api/roles
+Content-Type: application/json
+
+{
+  "name": "LECTOR"
+}
+
+### Create a USER 1
+POST http://localhost:5000/api/users
+Content-Type: application/json
+
+{
+  "name": "Micaela",
+  "email" : "Micaela@email.com",
+  "password": "Micaela",
+  "idrol":"e9c4a400-8a43-4dba-9005-36997a19928f"
+}
+### Create a USER 2
+POST http://localhost:5000/api/users 
+Content-Type: application/json
+
+{
+  "name": "Luciana",
+  "email" : "luciana@email.com",
+  "password": "luciana"
+}
+
+
+
+### create test regitry retrieve
+
+POST http://localhost:5000/api/registry/regist 
+Content-Type: application/json
+
+  {
+  "codigo" : "3000215",
+  "zona": "Chacacollo",
+  "distrito" :"DO1",
+  "nro_folder" : "257",
+  "nro_tramite": "375",
+  "cite": "SP-DGU-10-0-EMP/12132121",
+  "gestion":"2022",
+  "cod_catastral": "27-011-00018-000",
+  "nombre_apellido": "Rosa Flores Loza",
+  "tipo_tramite": "empadronamiento",
+  "nro_rta": "numero rta/24565468798",
+  "fecha_rta": "2022-10-09",
+  "archivo_registro":" "
+}
+
+###
+GET http://localhost:5000/api/roles
+//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2Njg2MTE2MzgsImV4cCI6MTY2ODYxMTY4OH0.hKFXnjSzm5YOg5-84Y5cvuN0y1Bx9OdRZCH3SA5IKmU
+
+###
+GET  http://localhost:5000/api/users
+
+### 
+GET http://localhost:5000/api/user
+Content-Type: application/json
+{
+  "iduser": "7f334ee3-266b-44ef-99eb-3a3bcb6cb46c"
+}
+
+
+
+GET http://localhost:5000/api/users/userID
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZmQ3ZDIyYTAtYjJlMC00OTdjLWI2YzgtMjQ1MWRkZTYxZTE0IiwidXNlcl9uYW1lIjoiam9yZ2UiLCJ1c2VyX2VtYWlsIjoiam9yZ2VAZW1haWwuY29tIiwiaWF0IjoxNjcxMTEzNzg0LCJleHAiOjE2NzExMTQwODR9.7iZsFVuQV3qgqIBbE31i6CPIzus4K2HE29RqFjyYwhw
+Content-Type: application/json
+{
+  "iduser": "7f334ee3-266b-44ef-99eb-3a3bcb6cb46c"
+}
+###List USERS
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email":"jorge@email.com",
+  "password":"jorge"
+}
+
+###REFRESH TOKENS
+GET http://localhost:5000/api/auth/refresh_token
+
+
+
+
+
+DELETE http://localhost:5000/api/auth/refresh_token
+###
+
+DELETE http://localhost:5000/api/users
