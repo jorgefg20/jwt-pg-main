@@ -23,24 +23,3 @@ ID_USER_FIELD.addEventListener("click", function() {
 ID_ICON_PSWD.addEventListener("click", function() {
     indexfunction.showPassword(ID_PASSWORD_FIELD);
 });
-
-/*BTN_ACEPTAR.addEventListener("click", function() {
-    indexfunction.verificationLogin(ID_USER_FIELD, ID_PASSWORD_FIELD, "ipt");
-});*/
-
-
-
-
-/*export default class IndexController {
-
-    constructor(){
-        
-    }
-
-    let button = document.getElementById("close");
-
-    button.addEventListener("click", login.clean());
-
-
-}
-window.IndexController = new IndexController();*/

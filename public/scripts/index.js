@@ -1,5 +1,6 @@
 import {jwtDecode} from "./jwt-decode.js";
 import IndexFunctions from "./indexFunctions.js";
+import Validations from "./validations.js";
 
 
 
@@ -15,13 +16,24 @@ const buttonRefreshToken = document.getElementById("button-refresh-token");
 const buttonDeleteToken = document.getElementById("button-delete-token");
 const pStatus = document.getElementById("login-status");
 const indexfunction = new IndexFunctions();
+const validations = new Validations();
+
+
 
 
 formLogin.onsubmit = async e => {
   e.preventDefault();
   console.log("esta es lo que deberia devolver del form");
   console.log(formLogin.email.value);
-  const loginDetails = await login({ email: formLogin.email.value, password: formLogin.password.value });
+  let loginDetails;
+
+  if(validations.validateDomain(formLogin.email.value)){
+     loginDetails = await login({ email: formLogin.email.value, password: formLogin.password.value });
+  }else{
+    formLogin.email.style.borderColor = "red";
+
+    return;
+  }
   
   if (loginDetails.error) {
     pStatus.innerText = loginDetails.error;
@@ -32,15 +44,10 @@ formLogin.onsubmit = async e => {
  
   const jwtDecoded = jwtDecode(accessToken);
 
- console.log(jwtDecoded.id_rol);
+  console.log(jwtDecoded.id_rol);
   const rols = await getNameRolOfthUser({id_rol: jwtDecoded.id_rol})
 
   console.log(rols);
-  /*const rol  = await getIdRolOftheUser(accessToken,jwtDecoded.user_id);
-  console.log(rol); 
-  console.log('roles');
-  const rols = await getRoleOftheuer(rol);
-  console.log(rols);*/
 
     if(rols === 'ADMIN'){
     location.assign("../users/adminuser.html")

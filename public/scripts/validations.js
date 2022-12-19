@@ -20,6 +20,7 @@ export default class Validations {
             return true;
         }
     }
+    
     validateDomain(input) {
         const r = /^([a-zA-Z0-9._\.])+\@(sacaba)+\.+(gob)+\.+(bo)+$/;
 
@@ -30,8 +31,5 @@ export default class Validations {
         }
 
     }
-
-
-
 
 }

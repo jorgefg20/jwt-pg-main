@@ -17,24 +17,6 @@ const pdfUp = document.getElementById("file-upload");
 const forms = document.getElementById('forms');
 const path = document.getElementById('path');
 
-
-/*
-  "codigo" : "0023",
-  "zona": "Chacacollo",
-  "distrito" :"DO1",
-  "nro_folder" : "257",
-  "nro_tramite": "375",
-  "cite": "SP-DGU-10-0-EMP/12132121",
-  "gestion":"2022",
-  "cod_catastral": "27-011-00018-000",
-  "nombre_apellido": "Rosa Flores Loza",
-  "tipo_tramite": "empadronamiento",
-  "nro_rta": "numero rta/24565468798",
-  "fecha_rta": "2022-10-09",
-  "archivo_registro": "SP-DGU-10-0-EMP/12132121"
-*/
-
-
 formRegist.onsubmit = async e => {
   e.preventDefault()
 
@@ -84,17 +66,6 @@ const convertBase64 = (file) => {
   });
 };
 
-
-function base64ToArrayBuffer(base64) {
-  let binary_string = window.atob(base64);
-  let len = binary_string.length;
-  let bytes = new Uint8Array(len);
-  for (let i = 0; i < len; i++) {
-    bytes[i] = binary_string.charCodeAt(i);
-  }
-  return bytes.buffer;
-}
-
 filebackup.addEventListener('click', () => {
 
   const preview = document.getElementById("preview");
@@ -140,7 +111,7 @@ pdfUp.addEventListener('change', () => {
 
 async function registRegitry(data) {
   //console.log(JSON.stringify(data));
-  
+
   const res = await fetch(`${api_url}/registry/regist`, {
     method: 'POST',
     credentials: 'include',
