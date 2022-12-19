@@ -5,6 +5,7 @@ import IndexFunctions from "./indexFunctions.js";
 
 const tokenDeAcceso  = [];
 let accessToken = '';
+
 //let api_url = 'https://jwt-pg-morganpage-tech.herokuapp.com/api';
 let api_url = '/api';//Will need to make this explicit if front-end on different server
 const divLogin = document.getElementById("div-login");
@@ -31,16 +32,16 @@ formLogin.onsubmit = async e => {
  
   const jwtDecoded = jwtDecode(accessToken);
 
-
-  const rols = await getUserIdandnamerole({user_id: jwtDecoded.user_id})
+ console.log(jwtDecoded.id_rol);
+  const rols = await getNameRolOfthUser({id_rol: jwtDecoded.id_rol})
 
   console.log(rols);
   /*const rol  = await getIdRolOftheUser(accessToken,jwtDecoded.user_id);
   console.log(rol); 
-
   console.log('roles');
   const rols = await getRoleOftheuer(rol);
   console.log(rols);*/
+
     if(rols === 'ADMIN'){
     location.assign("../users/adminuser.html")
 
@@ -50,10 +51,8 @@ formLogin.onsubmit = async e => {
     location.assign("../users/lectoruser.html")
   }
 
-  pStatus.innerHTML = `Login Successful bro! </br> Hello ${jwtDecoded.user_name}</br> Your role id is ${jwtDecoded.user_id}</br> Your email is ${jwtDecoded.user_email}</br> Your role is ${rols}`;
+  pStatus.innerHTML = `Login Successful bro! </br> Hello ${jwtDecoded.user_name}</br> Your role id is ${jwtDecoded.id_rol}</br> Your email is ${jwtDecoded.user_email}</br> Your role is ${rols}`;
 
- // location.assign("../users/home.html")
-  //showLoginPanel(false);
 }
 
 tokenDeAcceso.push(accessToken);
@@ -73,7 +72,7 @@ async function login(data) {
 }
 
 
-async function getUserIdandnamerole(iduser) {
+async function getNameRolOfthUser(iduser) {
 
   const res = await fetch(`${api_url}/roles/useridrole`, {
     method: 'POST',
@@ -84,86 +83,6 @@ async function getUserIdandnamerole(iduser) {
     },
     body: JSON.stringify(iduser)
   });
-  return await res.json();
-}
-
-
-/*buttonGetUsers.addEventListener (async () => {
-  const elUserList = document.getElementById("user-list");
-  elUserList.innerHTML = ""
-  const {users,error} = await fetchUsers(accessToken);
-  if(error){
-    pStatus.innerText = error;
-   // showLoginPanel(true);
-    return;
-  }
-  users.forEach(({user_name,user_email}) => {
-    let el = document.createElement("li");
-    el.innerText = `${user_name} - ${user_email}`; 
-    elUserList.append(el);
-  });
-})*/
-
-async function fetchUsers(token) {
-  const res = await fetch(`${api_url}/users`, {
-    headers: {
-      'Authorization': 'Bearer ' + token,
-    }
-  });
-  return await res.json();
-}
-
-
-
-
-
-/*buttonRefreshToken.onclick = async () => {
-  const refreshDetails = await fetchRefreshToken();
-  if (refreshDetails.error) {
-    pStatus.innerText = refreshDetails.error;
-    return;
-  }
-  accessToken = refreshDetails.accessToken;
-  const jwtDecoded = jwtDecode(accessToken);
-  pStatus.innerHTML = `Login Successful! </br> Hello ${jwtDecoded.user_name}</br> Your id is ${jwtDecoded.user_id}</br> Your email is ${jwtDecoded.user_email}`;
-  //showLoginPanel(false);
-}*/
-
-async function fetchRefreshToken(){
-  const res = await fetch(`${api_url}/auth/refresh_token`,{
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    mode: 'cors',
-    credentials: 'include'
-  });  
-  const jsonResponse = await res.json();
-  return jsonResponse;
-}
-
-/*buttonDeleteToken.onclick = async () => {
-  const deleteDetails = await deleteToken();
-  if (deleteDetails.error) {
-    pStatus.innerText = deleteDetails.error;
-    return;
-  }
-  accessToken = "";
-  pStatus.innerText = deleteDetails.message;
- // showLoginPanel(true);
- location.assign("../index.html")
- indexfunction.cleaninputfiels("ipt")
- console.log('entra al boton');
-}*/
-
-async function deleteToken(){
-  const res = await fetch(`${api_url}/auth/refresh_token`,{
-    method: 'DELETE',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    mode: 'cors',
-    credentials: 'include'
-  });  
   return await res.json();
 }
 

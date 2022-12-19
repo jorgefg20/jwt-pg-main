@@ -59,7 +59,7 @@
             </ul>
           </li>
           
-        <!--ul style=" text-align: center; margin: 0 auto;" class="navbar-nav me-auto mb-2 mb-lg-0">
+          <!--ul style=" text-align: center; margin: 0 auto;" class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" routerLink="/synopsis">Registrar</a>
           </li>
@@ -78,13 +78,26 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" routerLink="/trailer">Tipos de tramite</a>
           </li>
-        </ul>
+          </ul>
 
-        <--form class="d-flex">
+          <--form class="d-flex">
           <button type="button" class="btn btn-outline-primary" (click)="open('./register')">Register</button>
           <button type="button" class="btn btn-primary" (click)="open('./login')">Login</button>
-        </form-->
+          </form-->
+        </ul>
+      </div>
 
+      <div>
+
+        <ul id="cerrar">
+          <li><a id="" href="#"><i class="fa-solid fa-user fa-2x"></i></a>
+            <ul style="display: none;">
+              <li>
+                <button class="btn btn-primary" id="button-delete-token" type="button">cerrar sesion</button>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>

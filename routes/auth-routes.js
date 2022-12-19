@@ -18,13 +18,13 @@ router.post('/login', async (req, res) => {
     //JWT
     let tokens = jwtTokens(users.rows[0]);//Gets access and refresh tokens
     res.cookie('refresh_token', tokens.refreshToken, { ...(process.env.COOKIE_DOMAIN && { domain: process.env.COOKIE_DOMAIN }), httpOnly: true, sameSite: 'none', secure: true });
+    // res.render("home");    
     res.json(tokens);
 
   } catch (error) {
     res.status(401).json({ error: error.message });
   }
 });
-
 
 router.get('/refresh_token', (req, res) => {
   try {

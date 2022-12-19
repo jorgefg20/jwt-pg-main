@@ -1,7 +1,5 @@
 import express from 'express';
 import pool from '../db.js';
-//import bcrypt from 'bcrypt';
-import {authenticateToken} from '../middleware/authorization.js';
 import { jwtTokens } from '../utils/jwt-helpers.js';
 
 const router = express.Router();
@@ -18,15 +16,20 @@ router.get('/', async (req, res) => {
 });
 
 
-router.get('/rol', async (req, res) => {
-    try {
-      console.log(req.cookies);
-      const users = await pool.query('SELECT * FROM role');
-      res.json({role : users.rows});
-    } catch (error) {
-      res.status(500).json({error: error.message});
-    }
-  });
+router.post('/useridrole', async (req, res) => {
+  try {
+    const {id_rol} = req.body;
+    
+    const useridrole = await pool.query('SELECT * FROM role WHERE id_rol  = $1', [id_rol]);
+    // validate if exist an error in the query
+    if (useridrole.rows.length === 0) return res.status(401).json({ error: "el id del rol no esta bien " });
+    res.json(useridrole.rows[0].name_rol);
+
+  } catch (error) {
+    res.status(401).json({ error: error.message });
+  }
+});
+
 
 router.post('/', async (req, res) => {
   try {

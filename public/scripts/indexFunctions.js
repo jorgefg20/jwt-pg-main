@@ -55,5 +55,3 @@ export default class IndexFunctions {
         //PASSWORD.style.borderColor = RED_COLOR;
     }
 }
-
-//window.indexFunctions = new IndexFunctions();
